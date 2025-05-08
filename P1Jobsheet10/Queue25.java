@@ -15,17 +15,17 @@ public class Queue25 {
     }
 
     public boolean IsEmpty() {
-        if (size == 0 ){
+        if (size == 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     public boolean IsFull() {
-        if(size==0){
+        if (size == max) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -61,7 +61,7 @@ public class Queue25 {
             System.out.println("Queue masih kosong");
         }
     }
-
+    
     public void Enqueue(int dt) {
         if (IsFull()) {
             System.out.println("Queue sudah penuh");
@@ -70,28 +70,36 @@ public class Queue25 {
             if (IsEmpty()) {
                 front = rear = 0;
             } else {
-                rear = (rear + 1) % max;
+                if (rear == max - 1) {
+                    rear = 0;
+                } else {
+                    rear++;
+                }
             }
             data[rear] = dt;
+            
             size++;
         }
     }
 
-    public int Dequeue() {
+    public int Dequeue () {
         int dt = 0;
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
-           
+            
         } else {
             dt = data[front];
             size--;
             if (IsEmpty()) {
                 front = rear = -1;
             } else {
-                front = (front + 1) % max;
+                if (front == max - 1) {
+                    front = 0;
+                } else {
+                    front++;
+                }
             }
         }
         return dt;
     }
 }
-

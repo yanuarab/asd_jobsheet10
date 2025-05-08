@@ -18,7 +18,7 @@ public class QueueMain25 {
     public static void main(String[] args) {
         System.out.print("Masukkan kapasitas queue: ");
         int n = sc.nextInt();
-        Queue25 Q = new Queue25(n);  
+        Queue25 Q = new Queue25(n); 
         int pilih;
         do {
             menu();
@@ -31,7 +31,7 @@ public class QueueMain25 {
                     break;
                 case 2:
                     int dataKeluar = Q.Dequeue();
-                    if (dataKeluar != -1) {
+                    if (dataKeluar != -1) { 
                         System.out.println("Data yang dikeluarkan: " + dataKeluar);
                     }
                     break;
@@ -39,12 +39,12 @@ public class QueueMain25 {
                     Q.print();
                     break;
                 case 4:
-                    Q.peek();
+                    Q.peek(); 
                     break;
                 case 5:
-                    Q.clear();
+                    Q.clear(); 
                     break;
             }
-        } while (pilih >= 1 && pilih <= 5);
+        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
     }
 }
