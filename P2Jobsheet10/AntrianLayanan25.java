@@ -68,8 +68,7 @@ public class AntrianLayanan25 {
             data[index].tampilkanData();
         }
     }
-
-    public void lihatAkhir11() { // modifikasi 
+    public void lihatAkhir25() {
         if (IsEmpty()) {
             System.out.println("Antrian kosong.");
         } else {
